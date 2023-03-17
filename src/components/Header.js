@@ -1,5 +1,6 @@
 import React from "react";
 import PublicIcon from "@mui/icons-material/Public";
+import SearchIcon from "@mui/icons-material/Search";
 
 // import Search from "./Search";
 
@@ -9,8 +10,6 @@ function Header() {
       <h1>
         techies <PublicIcon />
       </h1>
-      
-     
     </div>
   );
 }

@@ -7,7 +7,11 @@
 body {
   width: 95%;
   margin: 0 auto;
-  background: #eeeeee;
+  background-color: #eee;
+  font-family: "Roboto", sans-serif;
+}
+hr {
+  border: 1px solid #46c2cb;
 }
 
 .all-news {
@@ -16,9 +20,17 @@ body {
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
-.heading{
-    margin: 20px;
+.heading {
+  margin: 20px;
+  display: flex;
+  justify-content: space-between;
+  padding-right: 5px;
 }
+.heading h1 {
+  color: #5201ff;
+  font-family: "Ubuntu", sans-serif;
+}
+
 .news {
   max-width: 500px;
   padding: 25px;
@@ -29,26 +41,43 @@ body {
 .news-title {
   padding-bottom: 10px;
   font-size: large;
-  border-bottom: 1px solid lightgrey;
+  border-bottom: 1px solid #46c2cb;
+  color: #222;
+  font-family: "Ubuntu", sans-serif;
 }
 .news-description {
+  font-weight: 300;
   padding-top: 10px;
   padding-bottom: 10px;
   font-size: 16px;
 }
+.news-author,
+.news-source {
+  margin-top: 10px;
+  font-weight: 100;
+}
 .news-author {
-  color: orangered;
-  margin-right: 10px;
+  color: #bf463b;
 }
 .news-source {
-  color: rgb(122, 122, 122);
-  margin-right: 10px;
+  color: #5201ff;
 }
 .news a {
   text-decoration: none;
-  color: blueviolet;
+  color: #5201ff;
+  font-size: 14px;
 }
 
-img{
-    width: 100%;
+img {
+  width: 100%;
+}
+
+.footer {
+  height: 100px;
+  background-color: transparent;
+  text-align: center;
+  color: white;
+  color: rgba(0, 0, 0, 0.5);
+  font-family: "Ubuntu", sans-serif;
+  padding-top: 50px;
 }
