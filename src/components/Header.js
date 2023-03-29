@@ -1,15 +1,17 @@
 import React from "react";
 import PublicIcon from "@mui/icons-material/Public";
-import SearchIcon from "@mui/icons-material/Search";
+import ThemeSwitcher from "./ThemeSwitcher";
 
-// import Search from "./Search";
-
-function Header() {
+function Header({ darkMode, handleThemeChange }) {
   return (
-    <div className="heading">
+    <div className={`heading ${darkMode ? "dark" : ""}`}>
       <h1>
         techies <PublicIcon />
       </h1>
+      <ThemeSwitcher
+        darkMode={darkMode}
+        handleThemeChange={handleThemeChange}
+      />
     </div>
   );
 }

@@ -4,7 +4,7 @@ import Link from "@mui/material/Link";
 
 function NewsArticle(props) {
   return (
-    <div className="news">
+    <div className={`news ${props.darkMode ? "dark" : ""}`}>
       <img src={props.cover} alt="cover of the article"></img>
 
       <h1 className="news-title">{props.title}</h1>
@@ -17,10 +17,10 @@ function NewsArticle(props) {
       </p>
 
       <span className="news-author news-infos">
-        {props.author ? props.author : "Unknown"}
+        {props.author ? props.author : "Unknown author"}
       </span>
-      <br />
-      <span className="news-source news-infos">[{props.source}]</span>
+      {/* <br />
+      <span className="news-source news-infos">[{props.source}]</span> */}
     </div>
   );
 }

@@ -1,16 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "./components/Header";
-import "./components/app.css";
+import "./app.css";
 import NewsArticle from "./components/NewsArticle";
 import articles from "./articles";
 import Footer from "./components/Footer";
 
 function App() {
+  const [darkMode, setDarkMode] = useState(false);
+
+  const handleThemeChange = () => {
+    setDarkMode(!darkMode);
+  };
+
   return (
-    <div>
-      <Header />
+    <>
+      <Header darkMode={darkMode} handleThemeChange={handleThemeChange} />
       <hr></hr>
-      <div className="all-news">
+      <div className={`all-news ${darkMode ? "dark" : ""}`}>
         {articles.map((article) => {
           return (
             <NewsArticle
@@ -20,14 +26,15 @@ function App() {
               description={article.description}
               url={article.url}
               author={article.author}
-              source={article.source.name}
+              // source={article.source.name}
+              darkMode={darkMode}
             />
           );
         })}
       </div>
 
       <Footer />
-    </div>
+    </>
   );
 }
 
