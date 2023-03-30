@@ -1,122 +1,130 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
+
+/* Global styles */
+
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+/* Body styles */
 body {
-  width: 95%;
-  margin: 0 auto;
-  background-color: #eee;
+width: 95%;
+margin: 0 auto;
+background-color: #eee;
+font-family: "Roboto", sans-serif;
+}
 
-  font-family: "Roboto", sans-serif;
-}
+/* Horizontal rule styles */
 hr {
-  border: 1px solid #46c2cb;
+border: 1px solid #46c2cb;
 }
+
+/* Image styles */
 img {
-  width: 100%;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
+width: 100%;
+border-top-left-radius: 5px;
+border-top-right-radius: 5px;
 }
+
+/* Heading styles */
 .heading {
-  margin: 20px;
-  display: flex;
-  justify-content: space-between;
-  padding-right: 5px;
+margin: 20px;
+display: flex;
+justify-content: space-between;
+padding-right: 5px;
 }
 .heading h1 {
-  color: #5201ff;
-  font-family: "Ubuntu", sans-serif;
-  font-size: x-large;
+color: #5201ff;
+font-family: "Ubuntu", sans-serif;
+font-size: x-large;
 }
+
+/* All news styles */
 .all-news {
-  margin: 50px auto;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+margin: 50px auto;
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 20px;
 }
 
+/* News styles */
 .news {
-  /* border: 1px solid lightgray; */
-  max-width: 500px;
-  padding: 25px;
-  border-radius: 5px;
-  background-color: rgba(255, 255, 255, 0.7);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+max-width: 500px;
+padding: 25px;
+border-radius: 5px;
+background-color: rgba(255, 255, 255, 0.7);
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-
 .news-title {
-  padding-bottom: 10px;
-  font-size: large;
-  border-bottom: 1px solid #46c2cb;
-  color: #222;
-  font-family: "Ubuntu", sans-serif;
+padding-bottom: 10px;
+font-size: large;
+border-bottom: 1px solid #46c2cb;
+color: #222;
+font-family: "Ubuntu", sans-serif;
 }
 .news-description {
-  font-weight: 300;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  font-size: 16px;
+font-weight: 300;
+padding-top: 10px;
+padding-bottom: 10px;
+font-size: 16px;
 }
 .news-author {
-  margin-top: 10px;
-  font-weight: 100;
-  color: #5201ff;
+margin-top: 10px;
+font-weight: 100;
+color: #5201ff;
 }
 
+/* News link styles */
 .news a {
-  text-decoration: none;
-  color: #5201ff;
-  font-size: 14px;
+text-decoration: none;
+color: #5201ff;
+font-size: 14px;
 }
 
+/* Footer styles */
 .footer {
-  height: 100px;
-  background-color: transparent;
-  text-align: center;
-  color: white;
-  color: rgba(0, 0, 0, 0.5);
-  font-family: "Ubuntu", sans-serif;
-  padding-top: 50px;
+height: 100px;
+background-color: transparent;
+text-align: center;
+color: white;
+color: rgba(0, 0, 0, 0.5);
+font-family: "Ubuntu", sans-serif;
+padding-top: 50px;
 }
 
-/* Darkmode styles */
+/* Dark mode styles */
 .dark {
-  background: #232529;
-
-  color: #eee;
+background: #232529;
+color: #eee;
 }
 .dark .news {
-  background-color: rgba(0, 0, 0, 0.5);
-  color: #fff;
-  box-shadow: 0 1px 2px rgba(255, 255, 255, 0.1);
+background-color: rgba(0, 0, 0, 0.5);
+color: #fff;
+box-shadow: 0 1px 2px rgba(255, 255, 255, 0.1);
 }
 .dark h1.news-title {
-  color: #edeade;
+color: #edeade;
 }
-
 .dark p.news-description {
-  color: gray;
+color: gray;
 }
-
 .dark span.news-author {
-  color: #46c2cb;
-  font-weight: 200;
+color: #46c2cb;
+font-weight: 200;
 }
-
 .dark .footer p {
-  color: #edeade;
+color: #edeade;
 }
 
+/* Media queries */
 @media only screen and (max-width: 768px) {
-  .all-news {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.all-news {
+grid-template-columns: repeat(2, 1fr);
 }
-
+}
 @media only screen and (max-width: 480px) {
-  .all-news {
-    grid-template-columns: 1fr;
-  }
+.all-news {
+grid-template-columns: 1fr;
+}
 }
