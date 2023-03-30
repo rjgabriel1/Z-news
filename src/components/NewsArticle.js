@@ -3,9 +3,15 @@ import LinkIcon from "@mui/icons-material/Link";
 import Link from "@mui/material/Link";
 
 function NewsArticle(props) {
+  const coverPlaceHolder =
+    "https://firehouseshelter.com/wp-content/themes/kronos/assets/images/news-placeholder.jpg";
   return (
     <div className={`news ${props.darkMode ? "dark" : ""}`}>
-      <img src={props.cover} alt="cover of the article"></img>
+      {props.cover ? (
+        <img src={props.cover} alt="cover of the article"></img>
+      ) : (
+        <img src={coverPlaceHolder} alt="cover of the article"></img>
+      )}
 
       <h1 className="news-title">{props.title}</h1>
       <p className="news-description">
