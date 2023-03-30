@@ -9,9 +9,8 @@ let articles = [
     description:
       "Amazon Games will be publishing Crystal Dynamicss next Tomb Raider game. This information was revealed in the State of Unreal 2022 presentation, where it was also said that the sequel would be based on Unreal Engine.",
     url: "https://economictimes.indiatimes.com/news/international/us/amazon-games-to-publish-next-tomb-raider-game/articleshow/96261743.cms",
-    urlToImage:
-      "https://img.etimg.com/thumb/msid-96261745,width-1070,height-580,imgsize-11830,overlay-economictimes/photo.jpg",
-    publishedAt: "2022-12-15T20:05:00Z",
+    urlToImage: null,
+
     content:
       "Crystal Dynamics and Amazon Games have come up with an arrangement. In it, Crystal Dynamics will develop a new multiplatform for Tomb Raider with full support from Amazon Games for publishing the gam… [+1292 chars]",
   },
