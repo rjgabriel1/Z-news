@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import Header from "./components/Header";
-import "./app.css";
 import NewsArticle from "./components/NewsArticle";
 import articles from "./articles";
 import Footer from "./components/Footer";
+import "./app.css";
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -26,7 +26,6 @@ function App() {
               description={article.description}
               url={article.url}
               author={article.author}
-              // source={article.source.name}
               darkMode={darkMode}
             />
           );
