@@ -1,15 +1,15 @@
 import React from "react";
-import PublicIcon from "@mui/icons-material/Public";
-import ThemeSwitcher from "./ThemeSwitcher";
+import ThemeSwitcher from "../ThemeSwitcher";
 
 function Header({ darkMode, handleThemeChange }) {
-  const appName = "ZNews";
+  const logo = "Z.ico";
 
   return (
     <div className={`heading ${darkMode ? "dark" : ""}`}>
-      <h1>
-        {appName} <PublicIcon />
-      </h1>
+      <div>
+        <img id="logo" src={logo} alt="logo" />
+      </div>
+
       <ThemeSwitcher
         darkMode={darkMode}
         handleThemeChange={handleThemeChange}
