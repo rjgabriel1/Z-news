@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import Header from "./components/Header";
-import NewsArticle from "./components/NewsArticle";
-import articles from "./articles";
+import Header from "./components/Header/Header";
+import NewsArticle from "./components/News/NewsArticle";
+import Heading from "./components/Header/Menu";
 import Footer from "./components/Footer";
 import "./app.css";
 
@@ -15,21 +15,11 @@ function App() {
   return (
     <>
       <Header darkMode={darkMode} handleThemeChange={handleThemeChange} />
-      <hr></hr>
-      <div className={`all-news ${darkMode ? "dark" : ""}`}>
-        {articles.map((article) => {
-          return (
-            <NewsArticle
-              key={article.url}
-              cover={article.urlToImage}
-              title={article.title}
-              description={article.description}
-              url={article.url}
-              author={article.author}
-              darkMode={darkMode}
-            />
-          );
-        })}
+
+      <Heading />
+
+      <div className={` ${darkMode ? "dark" : ""}`}>
+        <NewsArticle darkMode={darkMode} />
       </div>
 
       <Footer />
