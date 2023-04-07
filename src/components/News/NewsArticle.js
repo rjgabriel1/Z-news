@@ -30,7 +30,7 @@ function NewsArticle(props) {
   );
 }
 
-function MyComponent() {
+function NewsFeed() {
   const [articles, setArticles] = useState([]);
 
   useEffect(() => {
@@ -50,4 +50,4 @@ function MyComponent() {
   );
 }
 
-export default MyComponent;
+export default NewsFeed;
