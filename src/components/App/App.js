@@ -16,6 +16,11 @@ function App() {
     document.body.classList.toggle("dark");
   };
 
+  const handleLinkClick = (event) => {
+    // Handle click event for each link here
+    console.log(event.target.textContent + " clicked");
+  };
+
   useEffect(() => {
     if (darkMode) {
       document.body.classList.add("dark");
@@ -28,7 +33,7 @@ function App() {
     <>
       <Header darkMode={darkMode} handleThemeChange={handleThemeChange} />
 
-      <Menu />
+      <Menu handleLinkClick={handleLinkClick} />
 
       <div className={`${darkMode ? "dark" : ""}`}>
         <NewsFeed darkMode={darkMode} />

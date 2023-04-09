@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import LinkIcon from "@mui/icons-material/Link";
 import Link from "@mui/material/Link";
-import fetchData from "../../fetchData";
+import fetchData from "../../API/fetchData";
 import "./NewsArticles.css";
 
 function NewsArticle(props) {
@@ -37,7 +37,7 @@ function NewsFeed(props) {
   useEffect(() => {
     const getData = async () => {
       try {
-        const fetchedData = await fetchData();
+        const fetchedData = await fetchData(props.category);
         setArticles(fetchedData.articles);
         localStorage.setItem("articles", JSON.stringify(fetchedData.articles));
       } catch (error) {
@@ -45,16 +45,17 @@ function NewsFeed(props) {
         if (cachedData) {
           setArticles(JSON.parse(cachedData));
         }
+        console.log(error);
       }
     };
     getData();
-  }, []);
+  }, [props.category]);
 
   return (
     <div className={`all-news ${props.hidden ? "hidden" : ""}`}>
       {articles.map((article) => (
         <NewsArticle
-          key={article.id}
+          key={article.url}
           article={article}
           darkMode={props.darkMode}
         />
