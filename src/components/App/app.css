@@ -1,0 +1,57 @@
+/* Global styles */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* Body styles */
+body {
+  width: 95%;
+  margin: 0 auto;
+  background-color: #eee;
+  font-family: "Roboto", sans-serif;
+}
+
+/* Horizontal rule styles */
+hr {
+  border: 1px solid #46c2cb;
+}
+
+/* Image styles */
+img {
+  width: 100%;
+  border-radius: 8px;
+}
+.all-movies {
+  margin: 50px auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+/* Footer styles */
+.footer {
+  height: 100px;
+  background-color: transparent;
+  text-align: center;
+  color: white;
+  color: rgba(0, 0, 0, 0.5);
+  font-family: "Ubuntu", sans-serif;
+  padding-top: 50px;
+}
+
+/* Media queries */
+@media only screen and (max-width: 768px) {
+  .all-news {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media only screen and (max-width: 480px) {
+  .all-news {
+    grid-template-columns: 1fr;
+  }
+  .news {
+    max-width: 100%;
+  }
+}

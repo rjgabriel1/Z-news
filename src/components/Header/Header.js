@@ -1,5 +1,6 @@
 import React from "react";
-import ThemeSwitcher from "../ThemeSwitcher";
+import ThemeSwitcher from "../ThemeSwitcher/ThemeSwitcher";
+import "./Header.css"
 
 function Header({ darkMode, handleThemeChange }) {
   const logo = "Z.ico";

@@ -15,14 +15,22 @@ function ThemeSwitcher({ darkMode, handleThemeChange }) {
       {darkMode ? (
         <>
           <LightModeIcon />
-          <Typography variant="subtitle1" fontSize={"10px"} style={{ marginLeft: "5px" }}>
+          <Typography
+            variant="subtitle1"
+            fontSize={"10px"}
+            style={{ marginLeft: "5px" }}
+          >
             Light mode
           </Typography>
         </>
       ) : (
         <>
           <DarkModeIcon />
-          <Typography variant="subtitle1" fontSize={"10px"} style={{ marginLeft: "5px" }}>
+          <Typography
+            variant="subtitle1"
+            fontSize={"10px"}
+            style={{ marginLeft: "5px" }}
+          >
             Dark mode
           </Typography>
         </>

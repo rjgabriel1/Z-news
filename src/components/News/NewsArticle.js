@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import LinkIcon from "@mui/icons-material/Link";
 import Link from "@mui/material/Link";
 import fetchData from "../../fetchData";
+import "./NewsArticles.css";
 
 function NewsArticle(props) {
   const coverPlaceHolder =
@@ -30,21 +31,33 @@ function NewsArticle(props) {
   );
 }
 
-function NewsFeed() {
+function NewsFeed(props) {
   const [articles, setArticles] = useState([]);
 
   useEffect(() => {
     const getData = async () => {
-      const fetchedData = await fetchData();
-      setArticles(fetchedData.articles);
+      try {
+        const fetchedData = await fetchData();
+        setArticles(fetchedData.articles);
+        localStorage.setItem("articles", JSON.stringify(fetchedData.articles));
+      } catch (error) {
+        const cachedData = localStorage.getItem("articles");
+        if (cachedData) {
+          setArticles(JSON.parse(cachedData));
+        }
+      }
     };
     getData();
   }, []);
 
   return (
-    <div className="all-news">
+    <div className={`all-news ${props.hidden ? "hidden" : ""}`}>
       {articles.map((article) => (
-        <NewsArticle key={article.id} article={article} />
+        <NewsArticle
+          key={article.id}
+          article={article}
+          darkMode={props.darkMode}
+        />
       ))}
     </div>
   );
