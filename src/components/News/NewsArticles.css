@@ -1,25 +1,32 @@
+/* Horizontal Rule styles */
 hr {
-  border: 1px solid #46c2cb;
+  border: 1px solid #ccc;
 }
 
 /* All news styles */
 .all-news {
-  margin: 50px auto;
+  margin: 200px auto 50px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
+}
+.article-image {
+  width: 400px;
+  height: 250px;
+  border-radius: 8px;
 }
 .news {
   max-width: 500px;
   padding: 25px;
   border-radius: 8px;
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
 }
 .news-title {
   padding-bottom: 10px;
   font-size: large;
-  border-bottom: 1px solid #46c2cb;
+  border-bottom: 1px solid #ccc;
   color: #222;
   font-family: "Ubuntu", sans-serif;
 }
@@ -33,7 +40,7 @@ hr {
   margin-top: 10px;
   font-weight: 100;
   color: #5201ff;
-  text-overflow: ellipsis;
+  word-break: break-all;
 }
 
 /* News link styles */
@@ -43,30 +50,26 @@ hr {
   font-size: 14px;
 }
 
-/* Dark mode styles */
 .dark {
-  background: #232529;
+  background: #0f1117;
   color: #eee;
 }
 .dark .news {
-  background-color: rgba(0, 0, 0, 0.5);
+  background: #202123;
   color: #fff;
   box-shadow: 0 1px 2px rgba(255, 255, 255, 0.1);
 }
-.dark h1.news-title {
-  color: #edeade;
-}
-.dark p.news-description {
-  color: gray;
+.dark h1.news-title,
+.dark p.news-description,
+.dark span.news-author,
+.dark .footer p {
+  color: #ccc;
 }
 .dark span.news-author {
-  color: #46c2cb;
   font-weight: 200;
   text-overflow: ellipsis;
 }
-.dark .footer p {
-  color: #edeade;
-}
+
 /* Media queries */
 @media only screen and (max-width: 768px) {
   .all-news {
@@ -74,7 +77,6 @@ hr {
   }
   .news {
     max-width: 60%;
-   
   }
 }
 @media only screen and (max-width: 480px) {
