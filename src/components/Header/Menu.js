@@ -17,7 +17,7 @@ export default function Menu() {
         <div className="nav-items">
           <Link to="/" onClick={handleLinkClick}>
             <Button variant="text" className="item">
-              Hotspots
+              Hotspots // Render the text content of the button
             </Button>
           </Link>
           <Link onClick={handleLinkClick}>
@@ -38,7 +38,8 @@ export default function Menu() {
           </Link>
         </div>
       </div>
-      <NewsFeed category={category} />
+      <NewsFeed category={category} /> // Pass the selected category as a prop
+      to the NewsFeed component
     </>
   );
 }
