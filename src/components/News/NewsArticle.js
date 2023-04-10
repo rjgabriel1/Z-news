@@ -10,9 +10,17 @@ function NewsArticle(props) {
   return (
     <div className={`news ${props.darkMode ? "dark" : ""}`}>
       {props.article.urlToImage ? (
-        <img src={props.article.urlToImage} alt="cover of the article" />
+        <img
+          className="article-image"
+          src={props.article.urlToImage}
+          alt="cover of the article"
+        />
       ) : (
-        <img src={coverPlaceHolder} alt="cover of the article" />
+        <img
+          className="article-image"
+          src={coverPlaceHolder}
+          alt="cover of the article"
+        />
       )}
 
       <h1 className="news-title">{props.article.title}</h1>
@@ -24,6 +32,7 @@ function NewsArticle(props) {
         </Link>
       </p>
 
+      <br />
       <span className="news-author news-infos">
         {props.article.author ? props.article.author : "Unknown author"}
       </span>

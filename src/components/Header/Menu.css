@@ -1,32 +1,86 @@
-.head {
-  width: 100%;
+.heading {
   display: flex;
-  padding: 20px;
-  justify-content: center;
-  border-top: 0.1px solid gray;
-  border-bottom: 0.1px solid gray;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: #ffffff;
+  color: #4e4e4e;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  z-index: 999;
+}
+.heading img {
+  height: 50px;
+  width: auto;
+}
+.category-heading {
+  align-items: center;
+  background-color: #f9f9fb;
+  border: 1px solid #ccc;
+  color: #4e4e4e;
+  display: flex;
+  height: 40px;
+  justify-content: flex-start;
+  left: 0;
+  padding: 6px;
+  position: fixed;
+  margin-bottom: 50px;
+  text-align: center;
+  top: 100px;
+  width: 100%;
 }
 
-/* For small screens */
-@media only screen and (max-width: 480px) {
-  .head {
-    height: auto;
+.nav-link {
+  display: inline-block;
+  padding: 10px;
+  background-color: transparent;
+  color: #4e4e4e;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+}
+
+.toggleTheme {
+  position: fixed;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  border-radius: 60%;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.toggleTheme i {
+  font-size: 24px;
+  color: #fff;
+}
+
+@media only screen and (max-width: 767px) {
+  .heading {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 15px;
   }
-}
 
-/* For medium screens */
-@media only screen and (min-width: 481px) and (max-width: 768px) {
-  .head {
-    height: 80px;
+  .heading h1 {
+    font-size: 24px;
   }
-}
 
-/* For large screens */
-@media only screen and (min-width: 769px) {
-  .head {
-    height: 100px;
+  .logo {
+    margin: 10px;
   }
 }

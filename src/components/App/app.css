@@ -9,31 +9,13 @@
 body {
   width: 95%;
   margin: 0 auto;
-  background-color: #eee;
+  background-color: #f9f9fb;
   font-family: "Roboto", sans-serif;
 }
 
 /* Horizontal rule styles */
 hr {
   border: 1px solid #46c2cb;
-}
-
-/* Image styles */
-img {
-  width: 100%;
-  border-radius: 8px;
-}
-
-
-/* Footer styles */
-.footer {
-  height: 100px;
-  background-color: transparent;
-  text-align: center;
-  color: white;
-  color: rgba(0, 0, 0, 0.5);
-  font-family: "Ubuntu", sans-serif;
-  padding-top: 50px;
 }
 
 

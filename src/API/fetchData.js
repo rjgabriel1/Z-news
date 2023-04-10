@@ -5,17 +5,20 @@ const fetchData = async (category) => {
   let articles = [];
 
   switch (category) {
-    case "Technology":
+    case "technology":
       url = config.technology;
       break;
-    case "Cinema":
+    case "cinema":
       url = config.movie;
       break;
-    case "Sport":
+    case "sport":
       url = config.sport;
       break;
+    case "travel":
+      url = config.travel;
+      break;
     default:
-      url = config.everything;
+      url = config.news;
       break;
   }
 

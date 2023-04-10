@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
-import Header from "../Header/Header";
-import NewsFeed from "../News/NewsArticle";
-import Menu from "../Header/Menu";
+
+import NavBar from "../Header/CategoryMenu";
 import Footer from "../Footer/Footer";
 import "./app.css";
 
@@ -31,13 +30,11 @@ function App() {
 
   return (
     <>
-      <Header darkMode={darkMode} handleThemeChange={handleThemeChange} />
-
-      <Menu handleLinkClick={handleLinkClick} />
-
-      <div className={`${darkMode ? "dark" : ""}`}>
-        <NewsFeed darkMode={darkMode} />
-      </div>
+      <NavBar
+        handleLinkClick={handleLinkClick}
+        darkMode={darkMode}
+        handleThemeChange={handleThemeChange}
+      />
 
       <Footer />
     </>
