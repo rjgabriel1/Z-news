@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import "./Menu.css";
-
+import "./Main.css";
 import NewsFeed from "../News/NewsArticle";
 import ThemeSwitcher from "../ThemeSwitcher/ThemeSwitcher";
 
 export default function Main({ darkMode, handleThemeChange }) {
-  const [category, setCategory] = useState("");
+  const [category, setCategory] = useState("news");
   const logo = "Z.ico";
   const handleLinkClick = (event) => {
     const category = event.target.textContent;
@@ -19,7 +18,7 @@ export default function Main({ darkMode, handleThemeChange }) {
           <img id="logo" src={logo} alt="logo" />
         </div>
 
-        <div className="nav-items">
+        <div className={`nav-items ${darkMode ? "dark" : ""}`}>
           <button className="nav-link" onClick={handleLinkClick}>
             News
           </button>
@@ -27,13 +26,10 @@ export default function Main({ darkMode, handleThemeChange }) {
             Technology
           </button>
           <button className="nav-link" onClick={handleLinkClick}>
-            Cinema
+            Gaming
           </button>
           <button className="nav-link" onClick={handleLinkClick}>
-            Sport
-          </button>
-          <button className="nav-link" onClick={handleLinkClick}>
-            Travel
+            Crypto
           </button>
         </div>
 
@@ -42,16 +38,12 @@ export default function Main({ darkMode, handleThemeChange }) {
           handleThemeChange={handleThemeChange}
         />
       </div>
+
       <div className="category-heading">
-        <h4>Category &gt; {category ? category : "All"}</h4>
+        <h4>Category &gt; {category ? category : "news"}</h4>
       </div>
-      {category === "cinema" ? (
-        <h1 className="movie">Movie</h1>
-      ) : (
-        <NewsFeed darkMode={darkMode} category={category} />
-      )}
-      {/* <NewsFeed darkMode={darkMode} category={category} /> */}
+
+      <NewsFeed darkMode={darkMode} category={category} />
     </>
-    
   );
 }

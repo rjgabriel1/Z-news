@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from "react";
-import LinkIcon from "@mui/icons-material/Link";
-import Link from "@mui/material/Link";
 import fetchData from "../../API/fetchData";
 import "./NewsArticles.css";
 
+
 function NewsArticle(props) {
-  const coverPlaceHolder =
-    "https://firehouseshelter.com/wp-content/themes/kronos/assets/images/news-placeholder.jpg";
+  const coverPlaceHolder ="https://groundwater.org/wp-content/uploads/2022/07/news-placeholder.png";
   return (
     <div className={`news ${props.darkMode ? "dark" : ""}`}>
       {props.article.urlToImage ? (
@@ -24,17 +22,16 @@ function NewsArticle(props) {
       )}
 
       <h1 className="news-title">{props.article.title}</h1>
-      <p className="news-description">
-        {props.article.description}
-        <Link href={props.article.url} className="article-url">
-          {" "}
-          <LinkIcon fontSize="small" />{" "}
-        </Link>
-      </p>
-
+      <p className="news-description">{props.article.description}</p>
+      <a className="article-url" href={props.article.url} target="_blank" rel="noreferrer">
+        Read article
+      </a>
       <br />
-      <span className="news-author news-infos">
-        {props.article.author ? props.article.author : "Unknown author"}
+      <br />
+      <br />
+      
+      <span className="news-source news-infos">
+        {props.article.source.name ? props.article.source.name : "Unknown"}
       </span>
     </div>
   );

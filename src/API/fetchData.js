@@ -8,15 +8,13 @@ const fetchData = async (category) => {
     case "technology":
       url = config.technology;
       break;
-    case "cinema":
-      url = config.movie;
+    case "crypto":
+      url = config.crypto;
       break;
-    case "sport":
-      url = config.sport;
+    case "gaming":
+      url = config.gaming;
       break;
-    case "travel":
-      url = config.travel;
-      break;
+  
     default:
       url = config.news;
       break;
