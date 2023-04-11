@@ -1,89 +1,114 @@
-/* Horizontal Rule styles */
-hr {
-  border: 1px solid #ccc;
-}
+/* newsFeed styles */
 
-/* All news styles */
 .all-news {
   margin: 200px auto 50px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
+
+/* -------- Article styles -------- */
 .article-image {
-  width: 400px;
-  height: 250px;
+  width: 100%;
+  max-width: 400px;
+  height: auto;
   border-radius: 8px;
 }
+
 .news {
-  max-width: 500px;
   padding: 25px;
   border-radius: 8px;
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   overflow: hidden;
 }
+
 .news-title {
   padding-bottom: 10px;
   font-size: large;
-  border-bottom: 1px solid #ccc;
-  color: #222;
+  border-bottom: 1px solid #b5b5b5;
+  color: #1b1b1b;
   font-family: "Ubuntu", sans-serif;
 }
+
 .news-description {
-  font-weight: 300;
+  color: #343434;
+  font-weight: normal;
   padding-top: 10px;
   padding-bottom: 10px;
   font-size: 16px;
 }
-.news-author {
-  margin-top: 10px;
-  font-weight: 100;
-  color: #5201ff;
-  word-break: break-all;
+
+span.news-source {
+  margin-left: 5px;
+  font-weight: 900;
+  text-overflow: ellipsis;
+  color: #0269c2;
+  position: relative;
 }
 
-/* News link styles */
-.news a {
+span.news-source::before {
+  content: "";
+  position: absolute;
+  left: -10px;
+  top: 60%;
+  transform: translateY(-50%);
+  height: 16px;
+  width: 3px;
+  background-color: #872cfe;
+}
+
+.article-url {
+  display: inline-block;
+  padding: 6px 12px;
+  border: 1px solid #0269c2;
+  background-color: #0269c2;
+  color: #fff;
   text-decoration: none;
-  color: #5201ff;
-  font-size: 14px;
+  border-radius: 2px;
 }
 
+
+/*-------- Dark theme styles-------- */
 .dark {
-  background: #0f1117;
+  background: #1b1b1b;
   color: #eee;
 }
+
 .dark .news {
-  background: #202123;
+  background: #343434;
   color: #fff;
   box-shadow: 0 1px 2px rgba(255, 255, 255, 0.1);
 }
+
 .dark h1.news-title,
 .dark p.news-description,
-.dark span.news-author,
 .dark .footer p {
-  color: #ccc;
-}
-.dark span.news-author {
-  font-weight: 200;
-  text-overflow: ellipsis;
+  color: #fff;
 }
 
-/* Media queries */
-@media only screen and (max-width: 768px) {
+.dark span.news-source {
+  font-weight: 800;
+  color: #fff;
+}
+
+.dark span.news-source::before {
+  background-color: #872cfe;
+}
+
+/*------------- Media queries--------------- */
+@media screen and (max-width: 1024px) {
   .all-news {
-    grid-template-columns: 1fr;
-  }
-  .news {
-    max-width: 60%;
+    grid-template-columns: repeat(2, 1fr);
   }
 }
-@media only screen and (max-width: 480px) {
+
+@media screen and (max-width: 768px) {
   .all-news {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(1, 1fr);
   }
-  .news {
-    max-width: 80%;
+
+  .article-image {
+    max-width: 100%;
   }
 }

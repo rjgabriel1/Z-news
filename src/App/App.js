@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
-
-import NavBar from "../Header/CategoryMenu";
-import Footer from "../Footer/Footer";
+import Main from "../components/Main/Main";
+import Footer from "../components/Footer/Footer";
 import "./app.css";
 
 function App() {
@@ -30,7 +29,7 @@ function App() {
 
   return (
     <>
-      <NavBar
+      <Main
         handleLinkClick={handleLinkClick}
         darkMode={darkMode}
         handleThemeChange={handleThemeChange}

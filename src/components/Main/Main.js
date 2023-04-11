@@ -4,7 +4,7 @@ import "./Menu.css";
 import NewsFeed from "../News/NewsArticle";
 import ThemeSwitcher from "../ThemeSwitcher/ThemeSwitcher";
 
-export default function NavBar({ darkMode, handleThemeChange }) {
+export default function Main({ darkMode, handleThemeChange }) {
   const [category, setCategory] = useState("");
   const logo = "Z.ico";
   const handleLinkClick = (event) => {
@@ -45,8 +45,13 @@ export default function NavBar({ darkMode, handleThemeChange }) {
       <div className="category-heading">
         <h4>Category &gt; {category ? category : "All"}</h4>
       </div>
-
-      <NewsFeed darkMode={darkMode} category={category} />
+      {category === "cinema" ? (
+        <h1 className="movie">Movie</h1>
+      ) : (
+        <NewsFeed darkMode={darkMode} category={category} />
+      )}
+      {/* <NewsFeed darkMode={darkMode} category={category} /> */}
     </>
+    
   );
 }
