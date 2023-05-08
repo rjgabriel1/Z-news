@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Main from "../components/Main/Main";
 import Footer from "../components/Footer/Footer";
 import "./app.css";
-
+console.log(`${process.env.REACT_APP_APIKEY}`);
 function App() {
   const prefersDarkMode = window.matchMedia(
     "(prefers-color-scheme: dark)"
@@ -10,21 +10,17 @@ function App() {
   const [darkMode, setDarkMode] = useState(prefersDarkMode);
 
   const handleThemeChange = () => {
-    setDarkMode(!darkMode);
-    document.body.classList.toggle("dark");
+    const newDarkMode = !darkMode;
+    setDarkMode(newDarkMode);
+    document.body.classList.toggle("dark", newDarkMode);
   };
 
   const handleLinkClick = (event) => {
-    // Handle click event for each link here
-    console.log(event.target.textContent + " clicked");
+    console.log(`${event.target.textContent} clicked`);
   };
 
   useEffect(() => {
-    if (darkMode) {
-      document.body.classList.add("dark");
-    } else {
-      document.body.classList.remove("dark");
-    }
+    document.body.classList.toggle("dark", darkMode);
   }, [darkMode]);
 
   return (
@@ -34,7 +30,6 @@ function App() {
         darkMode={darkMode}
         handleThemeChange={handleThemeChange}
       />
-
       <Footer />
     </>
   );
