@@ -5,21 +5,10 @@ import ThemeSwitcher from "../ThemeSwitcher/ThemeSwitcher";
 
 export default function Main({ darkMode, handleThemeChange }) {
   const [category, setCategory] = useState("news");
-  const logo = "ZN.png";
-
+  const logo = "Z.ico";
   const handleLinkClick = (event) => {
-    const clickedCategory = event.target.textContent.toLowerCase();
-    setCategory(clickedCategory);
-  };
-
-  const renderNavLinks = () => {
-    const navLinks = ["Headlines", "Technology", "Gaming", "Crypto"];
-
-    return navLinks.map((link, index) => (
-      <button key={index} className="nav-link" onClick={handleLinkClick}>
-        {link}
-      </button>
-    ));
+    const category = event.target.textContent;
+    setCategory(category.toLowerCase());
   };
 
   return (
@@ -30,7 +19,18 @@ export default function Main({ darkMode, handleThemeChange }) {
         </div>
 
         <div className={`nav-items ${darkMode ? "dark" : ""}`}>
-          {renderNavLinks()}
+          <button className="nav-link" onClick={handleLinkClick}>
+            News
+          </button>
+          <button className="nav-link" onClick={handleLinkClick}>
+            Technology
+          </button>
+          <button className="nav-link" onClick={handleLinkClick}>
+            Gaming
+          </button>
+          <button className="nav-link" onClick={handleLinkClick}>
+            Crypto
+          </button>
         </div>
 
         <ThemeSwitcher
