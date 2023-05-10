@@ -3,9 +3,10 @@ import "./Main.css";
 import NewsFeed from "../News/NewsArticle";
 import ThemeSwitcher from "../ThemeSwitcher/ThemeSwitcher";
 
+const logo = "zoomer.png";
+
 export default function Main({ darkMode, handleThemeChange }) {
   const [category, setCategory] = useState("news");
-  const logo = "Z.ico";
   const handleLinkClick = (event) => {
     const category = event.target.textContent;
     setCategory(category.toLowerCase());
@@ -20,7 +21,7 @@ export default function Main({ darkMode, handleThemeChange }) {
 
         <div className={`nav-items ${darkMode ? "dark" : ""}`}>
           <button className="nav-link" onClick={handleLinkClick}>
-            News
+            Headlines
           </button>
           <button className="nav-link" onClick={handleLinkClick}>
             Technology
