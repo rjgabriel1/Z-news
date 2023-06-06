@@ -2,8 +2,7 @@ import React, { useState, useEffect } from "react";
 import fetchData from "../../API/fetchData";
 import "./NewsArticles.css";
 
-const placeholder ="news-placeholder.png"
-  
+const placeholder = "news-placeholder.png";
 
 function NewsArticle({ article, darkMode }) {
   const imageUrl = article.urlToImage ? article.urlToImage : placeholder;
@@ -39,21 +38,16 @@ function NewsFeed({ category, hidden, darkMode }) {
   const [articles, setArticles] = useState([]);
 
   useEffect(() => {
-    const fetchDataAndCache = async () => {
+    const fetchDataAndSetArticles = async () => {
       try {
         const fetchedData = await fetchData(category);
         setArticles(fetchedData.articles);
-        localStorage.setItem("articles", JSON.stringify(fetchedData.articles));
       } catch (error) {
-        const cachedData = localStorage.getItem("articles");
-        if (cachedData) {
-          setArticles(JSON.parse(cachedData));
-        }
         console.log(error);
       }
     };
 
-    fetchDataAndCache();
+    fetchDataAndSetArticles();
   }, [category]);
 
   return (
